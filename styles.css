@@ -127,3 +127,6 @@ a:hover {
   background-color: var(--main);
   
 }
+.text-color{
+  color: white;
+}
