@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Jackson Enloe creative project 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+  <body bgcolor="#80000">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Advice Generator</a>
+    </nav>
+
+    <div class="central">
+      <h1>Hit the advice button for some free advice</h1>
+
+      <form>
+        <!-- <label>Enter a U.S. city</label> -->
+        <input id="weatherInput" type="text"></input><br />
+        <input id="weatherSubmit" type="submit" value="Submit"></input>
+      </form>
+    </div>
+
+    <div id="github">
+    </div>
+    <hr>
+
+    <!-- <div id="forecastResults">
+    </div> -->
+    <br>
+    <br>
+    <br>
+    <script>
+     document.getElementById("weatherSubmit").addEventListener("click", function(event) {
+  event.preventDefault();
+    // var id = document.getElementById("user").value;
+    // console.log("id is",id);
+    var fullURL = "https://api.adviceslip.com/advice";
+    console.log(fullURL);
+    fetch(fullURL)
+    .then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      console.log(json);
+      document.getElementById("github").innerHTML = 
+        "<h2> "+json["slip"]["advice"]+"</h2>";
+    });
+  });
+</script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+    <script text="type/javascript" src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  </body>
+
+  <footer class="footer">
+  <div class="footer"><p><a href="https://github.com/BYUCS260/weather-app-Jaxenloe">Git hub Repository</p></a></div>
+  </footer>creative project 
+
+</html>
